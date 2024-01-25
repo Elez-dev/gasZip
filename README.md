@@ -31,9 +31,12 @@
 ```
 git clone https://github.com/Elez-dev/gasZip.git
 
+
 cd gasZip-master
 
+
 pip3.10 install -r requirements.txt
+
 
 python3.10 main.py
 ```
@@ -44,15 +47,15 @@ python3.10 main.py
 
 2. Polygon -> Gnosis, Fuse, CoreDAO, Kava, Klaytn, Celo, Harmony, Loot, Moonbeam, Moonriver, Astar, Viction, Beam - LayerZero Fee: $0.73
 
-3. Celo -> Fuse, Gnosis, Moonbeam - LayerZero Fee: $0.15
+3. Optimism ->  Kava, Gnosis, Fuse, CoreDAO, Moonriver, Viction, Beam, Klaytn, Celo, Harmony, Loot, Moonbeam - LayerZero Fee: $0.57
 
-4. Base -> Gnosis, opBNB, Moonbeam, Nova, Zora - LayerZero Fee: $0.41
+4. Celo -> Fuse, Gnosis, Moonbeam - LayerZero Fee: $0.15
 
-5. Gnosis -> Fuse, Gnosis, Moonbeam, Klaytn - LayerZero Fee: $0.18
+5. Base -> Gnosis, opBNB, Moonbeam, Nova, Zora - LayerZero Fee: $0.41
 
-6. Fantom -> Gnosis, Moonbeam, Moonriver, opBNB, Kava, Beam, Celo, Harmony - LayerZero Fee: $0.47
+6. Gnosis -> Fuse, Gnosis, Moonbeam, Klaytn - LayerZero Fee: $0.18
 
-7. Optimism ->  Kava, Gnosis, Fuse, CoreDAO, Moonriver, Viction, Beam, Klaytn, Celo, Harmony, Loot, Moonbeam - LayerZero Fee: $0.57
+7. Fantom -> Gnosis, Moonbeam, Moonriver, opBNB, Kava, Beam, Celo, Harmony - LayerZero Fee: $0.47
 
 8. Мега-маршрут: 2-7 модули вместе рандомно - LayerZero Fee: $2.5
 
