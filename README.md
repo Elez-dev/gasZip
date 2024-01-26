@@ -53,7 +53,7 @@ python3.10 main.py
 
 5. Base -> Gnosis, opBNB, Moonbeam, Nova, Zora - LayerZero Fee: $0.41
 
-6. Gnosis -> Fuse, Gnosis, Moonbeam, Klaytn - LayerZero Fee: $0.18
+6. Gnosis -> Fuse, Celo, Moonbeam, Klaytn - LayerZero Fee: $0.18
 
 7. Fantom -> Gnosis, Moonbeam, Moonriver, opBNB, Kava, Beam, Celo, Harmony - LayerZero Fee: $0.47
 
