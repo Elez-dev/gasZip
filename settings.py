@@ -36,12 +36,15 @@ TIME_ACCOUNT_DELAY = [200, 300]  # Задержка между АККАУНТА�
 TIME_DELAY_ERROR = [10, 20]      # Задержка при ошибках / фейлах     [min, max]
 
 
-VALUE = [0.0000001, 0.00000001, 8]          # [min, max, round_decimal]
+VALUE = [0.0000001, 0.00000001, 8]          # Количество получаемых токенов [min, max, round_decimal] Общая настройка для всех модулей
+
+# 1 module -----------------------------------------------------------------------------------------------------------------------------------------------------------
+
 CHAIN_FROM = Polygon                        # Из какой сети делать транзы. Доступно || Arbitrum, Optimism, Polygon, Zora,
                                             # Base, Nova, BSC, Celo, Gnosis, Fantom, Core, Moonriver, Moonbeam, Harmony, Linea, Scroll, zkEVM, Kava, Klaytn
 
-CHAIN_DEP = [Celo, Gnosis, Core]            # сюда пишем сети которые полюбому будут
-CHAIN_DEP_RANDOM = [Kava, Moonbeam]         # сюда пишем сети которые будут рандомно
+CHAIN_DEP = [Celo, Gnosis, Core]            # Сюда пишем сети которые полюбому будут
+CHAIN_DEP_RANDOM = [Kava, Moonbeam]         # Сюда пишем сети которые будут рандомно
 # Доступные сети
 # Polygon, Arbitrum, Optimism, BSC, Avax, Base, Gnosis, Core, Celo, Moonriver, Fantom, Kava, Linea, Moonbeam, Harmony,
 # Canto, Mantle, Nova, Fuse, Beam, Metis, Astar, Conflux, Horizen, Klaytn, Loot, Manta, Meter, OKX, opBNB, Orderly,
@@ -49,3 +52,6 @@ CHAIN_DEP_RANDOM = [Kava, Moonbeam]         # сюда пишем сети ко�
 
 NUMBER_OF_REPETITION = [1, 2]               # количество транз [min, max]
 
+# 8 module -----------------------------------------------------------------------------------------------------------------------------------------------
+
+MODULE = [1, 2, 3, 4, 5, 6, 7]

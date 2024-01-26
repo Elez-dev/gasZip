@@ -27,7 +27,8 @@ SCAN = {
     Scroll: 'https://scrollscan.com/tx/',
     zkEVM: 'https://zkevm.polygonscan.com/tx/',
     Kava: 'https://kavascan.com/tx/',
-    Klaytn: 'https://klaytnscope.com/tx/'
+    Klaytn: 'https://klaytnscope.com/tx/',
+    Core: 'https://scan.coredao.org/tx/'
 }
 
 
