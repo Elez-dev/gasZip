@@ -47,39 +47,39 @@ python3.10 main.py
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-2. Polygon -> Gnosis, Fuse, CoreDAO, Klaytn, Celo, Harmony, Loot, Moonbeam, Moonriver, opBNB, Viction - LayerZero V1 Fee:  $0.74 
+2.1 Polygon -> Gnosis, Fuse, CoreDAO, Klaytn, Celo, Harmony, Loot, Moonbeam, Moonriver, opBNB, Viction - LayerZero V1 Fee:  $0.74 
 
-2. Polygon -> Gnosis, Fuse, CoreDAO, Klaytn, Celo, Harmony, Loot, Moonbeam, Moonriver, opBNB, Viction - LayerZero V2 Fee:  $0.67 
+2.2 Polygon -> Gnosis, Fuse, CoreDAO, Klaytn, Celo, Harmony, Loot, Moonbeam, Moonriver, opBNB, Viction - LayerZero V2 Fee:  $0.67 
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-3. Optimism -> Gnosis, Fuse, CoreDAO, Moonriver, Viction, Klaytn, Celo, Harmony, Loot, Moonbeam, Nova, opBNB, Moonriver - LayerZero V1 Fee: $0.68
+3.1 Optimism -> Gnosis, Fuse, CoreDAO, Moonriver, Viction, Klaytn, Celo, Harmony, Loot, Moonbeam, Nova, opBNB, Moonriver - LayerZero V1 Fee: $0.68
 
-3. Optimism -> Gnosis, Fuse, CoreDAO, Moonriver, Viction, Klaytn, Celo, Harmony, Loot, Moonbeam, Nova, opBNB, Moonriver - LayerZero V1 Fee: $0.63
+3.2 Optimism -> Gnosis, Fuse, CoreDAO, Moonriver, Viction, Klaytn, Celo, Harmony, Loot, Moonbeam, Nova, opBNB, Moonriver - LayerZero V1 Fee: $0.63
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-4. Celo -> Fuse, Gnosis, Moonbeam - LayerZero V1 Fee: $0.16
+4.1 Celo -> Fuse, Gnosis, Moonbeam - LayerZero V1 Fee: $0.16
 
-4. Celo -> Fuse, Gnosis, Viction, Klaytn, Kava, Moonriver, Moonbeam, Loot, Harmony, CoreDAO - LayerZero V2 Fee: $0.55
-
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-5. Base -> Gnosis, opBNB, Moonbeam, Nova, Zora - LayerZero V1 Fee: $0.43
-
-5. Base -> Gnosis, Celo, Fuse, Kava, Klaytn, Harmony, CoreDAO, Moonbeam, Moonriver, Viction, Loot - LayerZero V1 Fee: $0.56
+4.2 Celo -> Fuse, Gnosis, Viction, Klaytn, Kava, Moonriver, Moonbeam, Loot, Harmony, CoreDAO - LayerZero V2 Fee: $0.55
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-6. Gnosis -> Fuse, Celo, Moonbeam, Klaytn - LayerZero V1 Fee: $0.19
+5.1 Base -> Gnosis, opBNB, Moonbeam, Nova, Zora - LayerZero V1 Fee: $0.43
 
-6. Gnosis -> Fuse, Celo, Moonbeam, Moonriver, Klaytn, CoreDAO, Kava, Harmony, Loot, Viction,  - LayerZero V2 Fee: $0.49
+5.2 Base -> Gnosis, Celo, Fuse, Kava, Klaytn, Harmony, CoreDAO, Moonbeam, Moonriver, Viction, Loot - LayerZero V1 Fee: $0.56
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-7. Fantom -> Gnosis, Moonbeam, Moonriver, opBNB, Fuse, Celo, Harmony - LayerZero V1 Fee: $0.40
+6.1 Gnosis -> Fuse, Celo, Moonbeam, Klaytn - LayerZero V1 Fee: $0.19
 
-7. Fantom -> Gnosis, Moonbeam, Moonriver, opBNB, Fuse, Celo, Harmony, CoreDAO, Klaytn, Kava, Loot, Viction - LayerZero V2 Fee: $0.62
+6.2 Gnosis -> Fuse, Celo, Moonbeam, Moonriver, Klaytn, CoreDAO, Kava, Harmony, Loot, Viction,  - LayerZero V2 Fee: $0.49
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+7.1 Fantom -> Gnosis, Moonbeam, Moonriver, opBNB, Fuse, Celo, Harmony - LayerZero V1 Fee: $0.40
+
+7.2 Fantom -> Gnosis, Moonbeam, Moonriver, opBNB, Fuse, Celo, Harmony, CoreDAO, Klaytn, Kava, Loot, Viction - LayerZero V2 Fee: $0.62
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
