@@ -45,6 +45,8 @@ python3.10 main.py
 
 1. Запуск по выбранным вами настройкам
 
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 2. Polygon -> Gnosis, Fuse, CoreDAO, Klaytn, Celo, Harmony, Loot, Moonbeam, Moonriver, opBNB, Viction - LayerZero V1 Fee:  $0.74 
 
 2. Polygon -> Gnosis, Fuse, CoreDAO, Klaytn, Celo, Harmony, Loot, Moonbeam, Moonriver, opBNB, Viction - LayerZero V2 Fee:  $0.67 
