@@ -15,9 +15,27 @@ web3_eth = Web3(Web3.HTTPProvider('https://rpc.ankr.com/eth', request_kwargs={'t
 
 class Worker:
 
-    def __init__(self, action):
-        super().__init__()
-        self.action = action
+    def __init__(self):
+        self.verison = None
+        self.action = None
+        self.chain_lists = {
+            1: {
+                2: [Gnosis, Fuse, Core, Klaytn, Celo, Harmony, Loot, Moonbeam, Moonriver, opBNB, Viction],
+                3: [Fuse, Gnosis, Moonbeam],
+                4: [Gnosis, opBNB, Moonbeam, Nova, Zora],
+                5: [Fuse, Celo, Moonbeam, Klaytn],
+                6: [Gnosis, Moonbeam, Moonriver, opBNB, Fuse, Celo, Harmony],
+                7: [Gnosis, Fuse, Core, Moonriver, Viction, Klaytn, Celo, Harmony, Loot, Moonbeam, Nova, opBNB, Moonriver]
+            },
+            2: {
+                2: [Gnosis, Fuse, Core, Klaytn, Celo, Harmony, Loot, Moonbeam, Moonriver, opBNB, Viction],
+                3: [Fuse, Gnosis, Viction, Klaytn, Kava, Moonriver, Moonbeam, Loot, Harmony, Core],
+                4: [Gnosis, Celo, Fuse, Kava, Klaytn, Harmony, Core, Moonbeam, Moonriver, Viction, Loot],
+                5: [Fuse, Celo, Moonbeam, Moonriver, Klaytn, Core, Kava, Harmony, Loot, Viction],
+                6: [Gnosis, Moonbeam, Moonriver, opBNB, Fuse, Celo, Harmony, Core, Klaytn, Kava, Loot, Viction],
+                7: [Gnosis, Fuse, Core, Moonriver, Viction, Klaytn, Celo, Harmony, Loot, Moonbeam, Nova, opBNB, Moonriver]
+            }
+        }
 
     @staticmethod
     def add_random_elements():
@@ -64,45 +82,46 @@ class Worker:
                 logger.info(f'Number of transactions - {number_trans}\n')
                 for _ in range(number_trans):
                     self.chek_gas_eth()
-                    zp.refuel()
+                    zp.refuel(self.verison)
                     sleeping(TIME_DELAY[0], TIME_DELAY[1])
 
             if self.action == 2:
-                chain_list = [Gnosis, Fuse, Core, Kava, Klaytn, Celo, Harmony, Loot, Moonbeam, Moonriver, Astar,
-                              Viction, Beam]
-                zp = GasZip(key, Polygon, chain_list, str_number, proxy)
+                zp = GasZip(key, Polygon, self.chain_lists[self.verison][2], str_number, proxy)
                 self.chek_gas_eth()
-                zp.refuel()
+                zp.refuel(self.verison)
 
             if self.action == 3:
-                chain_list = [Fuse, Gnosis, Moonbeam]
-                zp = GasZip(key, Celo, chain_list, str_number, proxy)
+                zp = GasZip(key, Celo, self.chain_lists[self.verison][3], str_number, proxy)
                 self.chek_gas_eth()
-                zp.refuel()
+                zp.refuel(self.verison)
 
             if self.action == 4:
-                chain_list = [Gnosis, opBNB, Moonbeam, Nova, Zora]
-                zp = GasZip(key, Base, chain_list, str_number, proxy)
+                zp = GasZip(key, Base, self.chain_lists[self.verison][4], str_number, proxy)
                 self.chek_gas_eth()
-                zp.refuel()
+                zp.refuel(self.verison)
 
             if self.action == 5:
-                chain_list = [Fuse, Celo, Moonbeam, Klaytn]
-                zp = GasZip(key, Gnosis, chain_list, str_number, proxy)
+                zp = GasZip(key, Gnosis, self.chain_lists[self.verison][5], str_number, proxy)
                 self.chek_gas_eth()
-                zp.refuel()
+                zp.refuel(self.verison)
 
             if self.action == 6:
-                chain_list = [Gnosis, Moonbeam, Moonriver, opBNB, Kava, Beam, Celo, Harmony]
-                zp = GasZip(key, Fantom, chain_list, str_number, proxy)
+                zp = GasZip(key, Fantom, self.chain_lists[self.verison][6], str_number, proxy)
                 self.chek_gas_eth()
-                zp.refuel()
+                zp.refuel(self.verison)
 
             if self.action == 7:
-                chain_list = [Kava, Gnosis, Fuse, Core, Moonriver, Viction, Beam, Klaytn, Celo, Harmony, Loot, Moonbeam]
-                zp = GasZip(key, Optimism, chain_list, str_number, proxy)
+                zp = GasZip(key, Optimism, self.chain_lists[self.verison][7], str_number, proxy)
                 self.chek_gas_eth()
-                zp.refuel()
+                zp.refuel(self.verison)
+
+            if self.action == 9:
+                zp = GasZip(key, CHAIN_FROM, [], str_number, proxy)
+                if self.verison == 1:
+                    zp.check_gas_v1()
+                else:
+                    zp.check_gas_v2()
+                return
 
             if self.action == 8:
                 random.shuffle(MODULE)
@@ -114,55 +133,98 @@ class Worker:
                         logger.info(f'Number of transactions - {number_trans}\n')
                         for _ in range(number_trans):
                             self.chek_gas_eth()
-                            zp.refuel()
+                            zp.refuel(self.verison)
                             sleeping(TIME_DELAY[0], TIME_DELAY[1])
 
                     if module == 2:
-                        chain_list = [Gnosis, Fuse, Core, Kava, Klaytn, Celo, Harmony, Loot, Moonbeam, Moonriver, Astar,
-                                      Viction, Beam]
-                        zp = GasZip(key, Polygon, chain_list, str_number, proxy)
+                        zp = GasZip(key, Polygon, self.chain_lists[self.verison][2], str_number, proxy)
                         self.chek_gas_eth()
-                        zp.refuel()
+                        zp.refuel(self.verison)
                         sleeping(TIME_DELAY[0], TIME_DELAY[1])
 
                     if module == 3:
-                        chain_list = [Fuse, Gnosis, Moonbeam]
-                        zp = GasZip(key, Celo, chain_list, str_number, proxy)
+                        zp = GasZip(key, Celo, self.chain_lists[self.verison][3], str_number, proxy)
                         self.chek_gas_eth()
-                        zp.refuel()
+                        zp.refuel(self.verison)
                         sleeping(TIME_DELAY[0], TIME_DELAY[1])
 
                     if module == 4:
-                        chain_list = [Gnosis, opBNB, Moonbeam, Nova, Zora]
-                        zp = GasZip(key, Base, chain_list, str_number, proxy)
+                        zp = GasZip(key, Base, self.chain_lists[self.verison][4], str_number, proxy)
                         self.chek_gas_eth()
-                        zp.refuel()
+                        zp.refuel(self.verison)
                         sleeping(TIME_DELAY[0], TIME_DELAY[1])
 
                     if module == 5:
-                        chain_list = [Fuse, Gnosis, Moonbeam, Klaytn]
-                        zp = GasZip(key, Gnosis, chain_list, str_number, proxy)
+                        zp = GasZip(key, Gnosis, self.chain_lists[self.verison][5], str_number, proxy)
                         self.chek_gas_eth()
-                        zp.refuel()
+                        zp.refuel(self.verison)
                         sleeping(TIME_DELAY[0], TIME_DELAY[1])
 
                     if module == 6:
-                        chain_list = [Gnosis, Moonbeam, Moonriver, opBNB, Kava, Beam, Celo, Harmony]
-                        zp = GasZip(key, Fantom, chain_list, str_number, proxy)
+                        zp = GasZip(key, Fantom, self.chain_lists[self.verison][6], str_number, proxy)
                         self.chek_gas_eth()
-                        zp.refuel()
+                        zp.refuel(self.verison)
                         sleeping(TIME_DELAY[0], TIME_DELAY[1])
 
                     if module == 7:
-                        chain_list = [Kava, Gnosis, Fuse, Core, Moonriver, Viction, Beam, Klaytn, Celo, Harmony, Loot,
-                                      Moonbeam]
-                        zp = GasZip(key, Optimism, chain_list, str_number, proxy)
+                        zp = GasZip(key, Optimism, self.chain_lists[self.verison][7], str_number, proxy)
                         self.chek_gas_eth()
-                        zp.refuel()
+                        zp.refuel(self.verison)
                         sleeping(TIME_DELAY[0], TIME_DELAY[1])
 
             logger.success(f'Account completed, sleep and move on to the next one\n')
             sleeping(TIME_ACCOUNT_DELAY[0], TIME_ACCOUNT_DELAY[1])
+
+    def display_menu(self):
+        logger.info('''
+Select LayerZero version:
+1 - LayerZero V1
+2 - LayerZero V2
+        ''')
+        time.sleep(0.1)
+        self.version = int(input('Choose a version: '))
+
+    def display_version_menu(self):
+        if self.version == 1:
+            logger.info('''
+1 - Run according to your chosen settings
+2 - Polygon  -> Gnosis, Fuse, CoreDAO, Klaytn, Celo, Harmony, Loot, Moonbeam, Moonriver, opBNB, Viction - Fee: $0.74
+3 - Celo     -> Fuse, Gnosis, Moonbeam - Fee: $0.16    
+4 - Base     -> Gnosis, opBNB, Moonbeam, Nova, Zora - Fee: $0.43
+5 - Gnosis   -> Fuse, Celo, Moonbeam, Klaytn - Fee: $0.19  
+6 - Fantom   -> Gnosis, Moonbeam, Moonriver, opBNB, Fuse, Celo, Harmony - Fee: $0.40
+7 - Optimism -> Gnosis, Fuse, CoreDAO, Moonriver, Viction, Klaytn, Celo, Harmony, Loot, Moonbeam, Nova, opBNB, Moonriver - Fee: $0.68
+8 - Mega route: 1 - 7 modules together randomly
+9 - Check price
+            ''')
+        else:
+            logger.info('''
+1 - Run according to your chosen settings
+2 - Polygon  -> Gnosis, Fuse, CoreDAO, Klaytn, Celo, Harmony, Loot, Moonbeam, Moonriver, opBNB, Viction - Fee: $0.67
+3 - Celo     -> Fuse, Gnosis, Viction, Klaytn, Kava, Moonriver, Moonbeam, Loot, Harmony, CoreDAO - Fee: $0.55
+4 - Base     -> Gnosis, Celo, Fuse, Kava, Klaytn, Harmony, CoreDAO, Moonbeam, Moonriver, Viction, Loot - Fee: $0.56
+5 - Gnosis   -> Fuse, Celo, Moonbeam, Moonriver, Klaytn, CoreDAO, Kava, Harmony, Loot, Viction - Fee: $0.49    
+6 - Fantom   -> Gnosis, Moonbeam, Moonriver, opBNB, Fuse, Celo, Harmony, CoreDAO, Klaytn, Kava, Loot, Viction - Fee: $0.62
+7 - Optimism -> Gnosis, Fuse, CoreDAO, Moonriver, Viction, Klaytn, Celo, Harmony, Loot, Moonbeam, Nova, opBNB, Moonriver - Fee: $0.63
+8 - Mega route: 1 - 7 modules together randomly
+9 - Check price
+                    ''')
+
+        self.action = int(input('Choose an action: '))
+
+    def run(self):
+        while True:
+            while True:
+                self.display_menu()
+                if self.version in range(1, 3):
+                    break
+
+            while True:
+                self.display_version_menu()
+                if self.action in range(1, 10):
+                    break
+
+            self.work()
 
 
 if __name__ == '__main__':
@@ -171,24 +233,5 @@ if __name__ == '__main__':
     logger.info(f'Number of wallets: {all_wallets}\n')
     keys_list = shuffle(list1)
 
-    while True:
-        while True:
-            logger.info('''
-1 - Run according to your chosen settings
-2 - Polygon  -> Gnosis, Fuse, CoreDAO, Kava, Klaytn, Celo, Harmony, Loot, Moonbeam, Moonriver, Astar, Viction, Beam - LayerZero Fee: $0.73
-3 - Celo     -> Fuse, Gnosis, Moonbeam - LayerZero Fee: $0.15     
-4 - Base     -> Gnosis, opBNB, Moonbeam, Nova, Zora - LayerZero Fee: $0.41  
-5 - Gnosis   -> Fuse, Celo, Moonbeam, Klaytn - LayerZero Fee: $0.18     
-6 - Fantom   -> Gnosis, Moonbeam, Moonriver, opBNB, Kava, Beam, Celo, Harmony - LayerZero Fee: $0.47
-7 - Optimism -> Kava, Gnosis, Fuse, CoreDAO, Moonriver, Viction, Beam, Klaytn, Celo, Harmony, Loot, Moonbeam - LayerZero Fee: $0.57
-8 - Mega route: 1 - 7 modules together randomly
-            ''')
-
-            time.sleep(0.1)
-            act = int(input('Choose an action: '))
-
-            if act in range(1, 9):
-                break
-
-        worker = Worker(act)
-        worker.work()
+    worker = Worker()
+    worker.run()

@@ -31,20 +31,20 @@ BASE_GASPRICE_PRESCALE = 0.05    # Использовать Max base fee и Prio
 BSC_GWEI = [1.1, 1.2]
 
 RETRY = 5                        # Количество попыток при ошибках / фейлах
-TIME_DELAY = [100, 200]          # Задержка после ТРАНЗАКЦИЙ         [min, max]
-TIME_ACCOUNT_DELAY = [200, 300]  # Задержка между АККАУНТАМИ         [min, max]
+TIME_DELAY = [200, 250]          # Задержка после ТРАНЗАКЦИЙ         [min, max]
+TIME_ACCOUNT_DELAY = [20, 30]  # Задержка между АККАУНТАМИ         [min, max]
 TIME_DELAY_ERROR = [10, 20]      # Задержка при ошибках / фейлах     [min, max]
 
 
-VALUE = [0.0000001, 0.00000001, 8]          # Количество получаемых токенов [min, max, round_decimal] Общая настройка для всех модулей
+VALUE = [0.05, 0.05, 3]          # Количество получаемых токенов [min, max, round_decimal] Общая настройка для всех модулей
 
 # 1 module -----------------------------------------------------------------------------------------------------------------------------------------------------------
 
-CHAIN_FROM = Polygon                        # Из какой сети делать транзы. Доступно || Arbitrum, Optimism, Polygon, Zora,
+CHAIN_FROM = Fantom                        # Из какой сети делать транзы. Доступно || Arbitrum, Optimism, Polygon, Zora,
                                             # Base, Nova, BSC, Celo, Gnosis, Fantom, Core, Moonriver, Moonbeam, Harmony, Linea, Scroll, zkEVM, Kava, Klaytn
 
-CHAIN_DEP = [Celo, Gnosis, Core]            # Сюда пишем сети которые полюбому будут
-CHAIN_DEP_RANDOM = [Kava, Moonbeam]         # Сюда пишем сети которые будут рандомно
+CHAIN_DEP = [Moonbeam]            # Сюда пишем сети которые полюбому будут
+CHAIN_DEP_RANDOM = []         # Сюда пишем сети которые будут рандомно
 # Доступные сети
 # Polygon, Arbitrum, Optimism, BSC, Avax, Base, Gnosis, Core, Celo, Moonriver, Fantom, Kava, Linea, Moonbeam, Harmony,
 # Canto, Mantle, Nova, Fuse, Beam, Metis, Astar, Conflux, Horizen, Klaytn, Loot, Manta, Meter, OKX, opBNB, Orderly,

@@ -126,16 +126,3 @@ class Wallet:
         else:
             logger.error("Couldn't get a response")
             raise ValueError('')
-
-    @staticmethod
-    def create_data(chain_id_list, value_list):
-        data = []
-        for i in range(len(chain_id_list)):
-            deposit_param = chain_id_list[i] << 240
-            value = value_list[i]
-            replacement_bytes = value.to_bytes(30, byteorder='big')
-            deposit_param_bytes = deposit_param.to_bytes(32, byteorder='big')
-            modified_bytes = deposit_param_bytes[:-30] + replacement_bytes
-            data.append(int.from_bytes(modified_bytes, byteorder='big'))
-        return data
-
