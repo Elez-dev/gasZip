@@ -16,7 +16,7 @@ web3_eth = Web3(Web3.HTTPProvider('https://rpc.ankr.com/eth', request_kwargs={'t
 class Worker:
 
     def __init__(self):
-        self.verison = None
+        self.version = None
         self.action = None
         self.chain_lists = {
             1: {
@@ -82,42 +82,42 @@ class Worker:
                 logger.info(f'Number of transactions - {number_trans}\n')
                 for _ in range(number_trans):
                     self.chek_gas_eth()
-                    zp.refuel(self.verison)
+                    zp.refuel(self.version)
                     sleeping(TIME_DELAY[0], TIME_DELAY[1])
 
             if self.action == 2:
-                zp = GasZip(key, Polygon, self.chain_lists[self.verison][2], str_number, proxy)
+                zp = GasZip(key, Polygon, self.chain_lists[self.version][2], str_number, proxy)
                 self.chek_gas_eth()
-                zp.refuel(self.verison)
+                zp.refuel(self.version)
 
             if self.action == 3:
-                zp = GasZip(key, Celo, self.chain_lists[self.verison][3], str_number, proxy)
+                zp = GasZip(key, Celo, self.chain_lists[self.version][3], str_number, proxy)
                 self.chek_gas_eth()
-                zp.refuel(self.verison)
+                zp.refuel(self.version)
 
             if self.action == 4:
-                zp = GasZip(key, Base, self.chain_lists[self.verison][4], str_number, proxy)
+                zp = GasZip(key, Base, self.chain_lists[self.version][4], str_number, proxy)
                 self.chek_gas_eth()
-                zp.refuel(self.verison)
+                zp.refuel(self.version)
 
             if self.action == 5:
-                zp = GasZip(key, Gnosis, self.chain_lists[self.verison][5], str_number, proxy)
+                zp = GasZip(key, Gnosis, self.chain_lists[self.version][5], str_number, proxy)
                 self.chek_gas_eth()
-                zp.refuel(self.verison)
+                zp.refuel(self.version)
 
             if self.action == 6:
-                zp = GasZip(key, Fantom, self.chain_lists[self.verison][6], str_number, proxy)
+                zp = GasZip(key, Fantom, self.chain_lists[self.version][6], str_number, proxy)
                 self.chek_gas_eth()
-                zp.refuel(self.verison)
+                zp.refuel(self.version)
 
             if self.action == 7:
-                zp = GasZip(key, Optimism, self.chain_lists[self.verison][7], str_number, proxy)
+                zp = GasZip(key, Optimism, self.chain_lists[self.version][7], str_number, proxy)
                 self.chek_gas_eth()
-                zp.refuel(self.verison)
+                zp.refuel(self.version)
 
             if self.action == 9:
                 zp = GasZip(key, CHAIN_FROM, [], str_number, proxy)
-                if self.verison == 1:
+                if self.version == 1:
                     zp.check_gas_v1()
                 else:
                     zp.check_gas_v2()
@@ -133,43 +133,43 @@ class Worker:
                         logger.info(f'Number of transactions - {number_trans}\n')
                         for _ in range(number_trans):
                             self.chek_gas_eth()
-                            zp.refuel(self.verison)
+                            zp.refuel(self.version)
                             sleeping(TIME_DELAY[0], TIME_DELAY[1])
 
                     if module == 2:
-                        zp = GasZip(key, Polygon, self.chain_lists[self.verison][2], str_number, proxy)
+                        zp = GasZip(key, Polygon, self.chain_lists[self.version][2], str_number, proxy)
                         self.chek_gas_eth()
-                        zp.refuel(self.verison)
+                        zp.refuel(self.version)
                         sleeping(TIME_DELAY[0], TIME_DELAY[1])
 
                     if module == 3:
-                        zp = GasZip(key, Celo, self.chain_lists[self.verison][3], str_number, proxy)
+                        zp = GasZip(key, Celo, self.chain_lists[self.version][3], str_number, proxy)
                         self.chek_gas_eth()
-                        zp.refuel(self.verison)
+                        zp.refuel(self.version)
                         sleeping(TIME_DELAY[0], TIME_DELAY[1])
 
                     if module == 4:
-                        zp = GasZip(key, Base, self.chain_lists[self.verison][4], str_number, proxy)
+                        zp = GasZip(key, Base, self.chain_lists[self.version][4], str_number, proxy)
                         self.chek_gas_eth()
-                        zp.refuel(self.verison)
+                        zp.refuel(self.version)
                         sleeping(TIME_DELAY[0], TIME_DELAY[1])
 
                     if module == 5:
-                        zp = GasZip(key, Gnosis, self.chain_lists[self.verison][5], str_number, proxy)
+                        zp = GasZip(key, Gnosis, self.chain_lists[self.version][5], str_number, proxy)
                         self.chek_gas_eth()
-                        zp.refuel(self.verison)
+                        zp.refuel(self.version)
                         sleeping(TIME_DELAY[0], TIME_DELAY[1])
 
                     if module == 6:
-                        zp = GasZip(key, Fantom, self.chain_lists[self.verison][6], str_number, proxy)
+                        zp = GasZip(key, Fantom, self.chain_lists[self.version][6], str_number, proxy)
                         self.chek_gas_eth()
-                        zp.refuel(self.verison)
+                        zp.refuel(self.version)
                         sleeping(TIME_DELAY[0], TIME_DELAY[1])
 
                     if module == 7:
-                        zp = GasZip(key, Optimism, self.chain_lists[self.verison][7], str_number, proxy)
+                        zp = GasZip(key, Optimism, self.chain_lists[self.version][7], str_number, proxy)
                         self.chek_gas_eth()
-                        zp.refuel(self.verison)
+                        zp.refuel(self.version)
                         sleeping(TIME_DELAY[0], TIME_DELAY[1])
 
             logger.success(f'Account completed, sleep and move on to the next one\n')

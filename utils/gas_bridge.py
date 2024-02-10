@@ -99,7 +99,8 @@ class GasZip(Wallet):
         id_list = [ids + 30000 for ids in self.dst_chain_id_list(self.chain_list)]
         amount_list = self.native_amount_list(self.chain_list)
         adapter_params = [self.contract_v2.functions.createNativeDropOption(id_list[i], amount_list[i], self.address_wallet).call() for i in range(len(self.chain_list))]
-        fees = sum(self.contract_v2.functions.estimateFees(id_list, ['0x' for _ in range(len([id_list]))], adapter_params).call())
+        list_message = ['0x' for _ in range(len(id_list))]
+        fees = sum(self.contract_v2.functions.estimateFees(id_list, list_message, adapter_params).call())
         deposit_param = self.create_data_v2(id_list, amount_list)
         dick = {
             "from": self.address_wallet,
