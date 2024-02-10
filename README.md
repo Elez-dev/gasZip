@@ -45,19 +45,49 @@ python3.10 main.py
 
 1. Запуск по выбранным вами настройкам
 
-2. Polygon -> Gnosis, Fuse, CoreDAO, Kava, Klaytn, Celo, Harmony, Loot, Moonbeam, Moonriver, Astar, Viction, Beam - LayerZero Fee: $0.73
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-3. Optimism ->  Kava, Gnosis, Fuse, CoreDAO, Moonriver, Viction, Beam, Klaytn, Celo, Harmony, Loot, Moonbeam - LayerZero Fee: $0.57
+2.1 Polygon -> Gnosis, Fuse, CoreDAO, Klaytn, Celo, Harmony, Loot, Moonbeam, Moonriver, opBNB, Viction - LayerZero V1 Fee:  $0.74 
 
-4. Celo -> Fuse, Gnosis, Moonbeam - LayerZero Fee: $0.15
+2.2 Polygon -> Gnosis, Fuse, CoreDAO, Klaytn, Celo, Harmony, Loot, Moonbeam, Moonriver, opBNB, Viction - LayerZero V2 Fee:  $0.67 
 
-5. Base -> Gnosis, opBNB, Moonbeam, Nova, Zora - LayerZero Fee: $0.41
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-6. Gnosis -> Fuse, Celo, Moonbeam, Klaytn - LayerZero Fee: $0.18
+3.1 Optimism -> Gnosis, Fuse, CoreDAO, Moonriver, Viction, Klaytn, Celo, Harmony, Loot, Moonbeam, Nova, opBNB, Moonriver - LayerZero V1 Fee: $0.68
 
-7. Fantom -> Gnosis, Moonbeam, Moonriver, opBNB, Kava, Beam, Celo, Harmony - LayerZero Fee: $0.47
+3.2 Optimism -> Gnosis, Fuse, CoreDAO, Moonriver, Viction, Klaytn, Celo, Harmony, Loot, Moonbeam, Nova, opBNB, Moonriver - LayerZero V1 Fee: $0.63
 
-8. Мега-маршрут: 2-7 модули вместе рандомно - LayerZero Fee: $2.5
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
----
+4.1 Celo -> Fuse, Gnosis, Moonbeam - LayerZero V1 Fee: $0.16
+
+4.2 Celo -> Fuse, Gnosis, Viction, Klaytn, Kava, Moonriver, Moonbeam, Loot, Harmony, CoreDAO - LayerZero V2 Fee: $0.55
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+5.1 Base -> Gnosis, opBNB, Moonbeam, Nova, Zora - LayerZero V1 Fee: $0.43
+
+5.2 Base -> Gnosis, Celo, Fuse, Kava, Klaytn, Harmony, CoreDAO, Moonbeam, Moonriver, Viction, Loot - LayerZero V1 Fee: $0.56
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+6.1 Gnosis -> Fuse, Celo, Moonbeam, Klaytn - LayerZero V1 Fee: $0.19
+
+6.2 Gnosis -> Fuse, Celo, Moonbeam, Moonriver, Klaytn, CoreDAO, Kava, Harmony, Loot, Viction,  - LayerZero V2 Fee: $0.49
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+7.1 Fantom -> Gnosis, Moonbeam, Moonriver, opBNB, Fuse, Celo, Harmony - LayerZero V1 Fee: $0.40
+
+7.2 Fantom -> Gnosis, Moonbeam, Moonriver, opBNB, Fuse, Celo, Harmony, CoreDAO, Klaytn, Kava, Loot, Viction - LayerZero V2 Fee: $0.62
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+8. Check price
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+9. Мега-маршрут: 2-7 модули вместе рандомно - LayerZero Fee: $2.5
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 <h2>❤️ По всем вопросам в наш чат - https://t.me/pythondao</h2>
