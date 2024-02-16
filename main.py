@@ -66,11 +66,18 @@ class Worker:
                 time.sleep(30)
                 continue
 
+    @staticmethod
+    def remove_crlf(input_string):
+        return input_string.replace("\r", "").replace("\n", "")
+
     def work(self):
         i = 0
         for number, account in keys_list:
             str_number = f'{number} / {all_wallets}'
-            key, proxy = account
+            prv_key, proxy = account
+
+            key = self.remove_crlf(prv_key)
+
             i += 1
             address = web3_eth.eth.account.from_key(key).address
             logger.info(f'Account #{i} || {address}\n')
@@ -85,33 +92,8 @@ class Worker:
                     zp.refuel(self.version)
                     sleeping(TIME_DELAY[0], TIME_DELAY[1])
 
-            if self.action == 2:
-                zp = GasZip(key, Polygon, self.chain_lists[self.version][2], str_number, proxy)
-                self.chek_gas_eth()
-                zp.refuel(self.version)
-
-            if self.action == 3:
-                zp = GasZip(key, Celo, self.chain_lists[self.version][3], str_number, proxy)
-                self.chek_gas_eth()
-                zp.refuel(self.version)
-
-            if self.action == 4:
-                zp = GasZip(key, Base, self.chain_lists[self.version][4], str_number, proxy)
-                self.chek_gas_eth()
-                zp.refuel(self.version)
-
-            if self.action == 5:
-                zp = GasZip(key, Gnosis, self.chain_lists[self.version][5], str_number, proxy)
-                self.chek_gas_eth()
-                zp.refuel(self.version)
-
-            if self.action == 6:
-                zp = GasZip(key, Fantom, self.chain_lists[self.version][6], str_number, proxy)
-                self.chek_gas_eth()
-                zp.refuel(self.version)
-
-            if self.action == 7:
-                zp = GasZip(key, Optimism, self.chain_lists[self.version][7], str_number, proxy)
+            if self.action in range(2, 8):
+                zp = GasZip(key, Polygon, self.chain_lists[self.version][self.action], str_number, proxy)
                 self.chek_gas_eth()
                 zp.refuel(self.version)
 
@@ -136,38 +118,8 @@ class Worker:
                             zp.refuel(self.version)
                             sleeping(TIME_DELAY[0], TIME_DELAY[1])
 
-                    if module == 2:
-                        zp = GasZip(key, Polygon, self.chain_lists[self.version][2], str_number, proxy)
-                        self.chek_gas_eth()
-                        zp.refuel(self.version)
-                        sleeping(TIME_DELAY[0], TIME_DELAY[1])
-
-                    if module == 3:
-                        zp = GasZip(key, Celo, self.chain_lists[self.version][3], str_number, proxy)
-                        self.chek_gas_eth()
-                        zp.refuel(self.version)
-                        sleeping(TIME_DELAY[0], TIME_DELAY[1])
-
-                    if module == 4:
-                        zp = GasZip(key, Base, self.chain_lists[self.version][4], str_number, proxy)
-                        self.chek_gas_eth()
-                        zp.refuel(self.version)
-                        sleeping(TIME_DELAY[0], TIME_DELAY[1])
-
-                    if module == 5:
-                        zp = GasZip(key, Gnosis, self.chain_lists[self.version][5], str_number, proxy)
-                        self.chek_gas_eth()
-                        zp.refuel(self.version)
-                        sleeping(TIME_DELAY[0], TIME_DELAY[1])
-
-                    if module == 6:
-                        zp = GasZip(key, Fantom, self.chain_lists[self.version][6], str_number, proxy)
-                        self.chek_gas_eth()
-                        zp.refuel(self.version)
-                        sleeping(TIME_DELAY[0], TIME_DELAY[1])
-
-                    if module == 7:
-                        zp = GasZip(key, Optimism, self.chain_lists[self.version][7], str_number, proxy)
+                    if module in range(2, 8):
+                        zp = GasZip(key, Polygon, self.chain_lists[self.version][module], str_number, proxy)
                         self.chek_gas_eth()
                         zp.refuel(self.version)
                         sleeping(TIME_DELAY[0], TIME_DELAY[1])
