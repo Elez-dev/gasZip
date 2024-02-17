@@ -18,6 +18,7 @@ class Worker:
     def __init__(self):
         self.version = None
         self.action = None
+        self.chain_from = [None, None, Polygon, Celo, Base, Gnosis, Fantom, Optimism]
         self.chain_lists = {
             1: {
                 2: [Gnosis, Fuse, Core, Klaytn, Celo, Harmony, Loot, Moonbeam, Moonriver, opBNB, Viction],
@@ -93,7 +94,7 @@ class Worker:
                     sleeping(TIME_DELAY[0], TIME_DELAY[1])
 
             if self.action in range(2, 8):
-                zp = GasZip(key, Polygon, self.chain_lists[self.version][self.action], str_number, proxy)
+                zp = GasZip(key, self.chain_from[self.action], self.chain_lists[self.version][self.action], str_number, proxy)
                 self.chek_gas_eth()
                 zp.refuel(self.version)
 
@@ -119,7 +120,7 @@ class Worker:
                             sleeping(TIME_DELAY[0], TIME_DELAY[1])
 
                     if module in range(2, 8):
-                        zp = GasZip(key, Polygon, self.chain_lists[self.version][module], str_number, proxy)
+                        zp = GasZip(key, self.chain_from[module], self.chain_lists[self.version][module], str_number, proxy)
                         self.chek_gas_eth()
                         zp.refuel(self.version)
                         sleeping(TIME_DELAY[0], TIME_DELAY[1])
